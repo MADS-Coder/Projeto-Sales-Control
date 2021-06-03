@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+        <script src="listarprodutos.js" defer></script>
+        <link rel="stylesheet" href="index.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+        <title>Sales Control - Estoque</title>
+</head>
+<body>
+    <div>
+        <nav class="menu">
+            <ul>
+                <li><a href="http://localhost:5500/public/cadastrar.html">Cadastrar Produtos</a></li>
+                <li><a href="http://localhost:5500/public/lista_produtos.html">Lista de Produtos</a></li>
+                <li><a href="#">Vendas de Produtos</a>
+                    <ul>
+                        <li><a href="http://localhost:5500/public/vendas.html">Realizar Vendas</a></li>
+                        <li><a href="http://localhost:5500/public/listavendas.html">Listar Vendas</a></li>
+                    </ul>
+                </li>
+            </ul> 
+        </nav>
+    <br>
+    <h2 id="titulo-listar">Lista de Produtos</h2>
+    <div id="dtProdutos">
+        <table id="tdProdutos">
+            <thead>
+                <tr>
+                    <th>Codigo</th>
+                    <th>Produtos</th>
+                    <th>Preço Unit.</th>
+                    <th>Quantidade</th>
+                    <th>Detalhes</th>
+                </tr>
+            </thead>
+            
+            <tbody id="produtos_cadastrados">
+            </tbody>
+            <a href="http://localhost:5500/public/cadastrar.html"><button id="botao-adicionar">+ Adicionar</button></a>
+        </table>
+    </div>
+    <div class="content">
+    </div>
+    <div id="dv-modal" class="modal">
+        <div class="modal-content">
+            <nav id="menu-editar">
+                <h2 id="titulo-editar">Editar Produtos</h2>
+            </nav>
+            <div>
+                <form id="form-editar">
+                    <div><label for="codigo">Codigo:</label></div>
+                    <br>
+                    <div><input type="number" class="caixa" id="codigo"></div> 
+                    <br>       
+                    <div><label for="produto">Produto:</label></div>
+                    <br>
+                    <div><input type="text" size="60" class="caixa" id="produto"></div> 
+                    <br>   
+                    <div><label for="preco">Preço:</label></div>  
+                    <br>  
+                    <div><input type="text" class="caixa" id="preco" onkeyup="formatarMoeda()"></div> 
+                    <br>   
+                    <div><label for="quantidade">Quantidade:</label></div>
+                    <br>    
+                    <div><input type="number" class="caixa" id="quantidade"></div>    
+                    <br>
+                    <div><label for="mensagem">Detalhes do Produto:</label></div>
+                    <br>
+                    <div><textarea name="mensagem"  cols="62" rows="4" id="mensagem" ></textarea></div> 
+                    <br>
+                    <input type="submit" value="Atualizar" id="botao-atualizar">  
+                    <input type="button" value="Fechar" class="btnFechar" onclick="closeModal()"> 
+                </form>
+           </div>
+        </div>
+    </div>
+
+
+    <div class="content_confimacao">
+    </div>
+    <div id="dv-modal_confirmacao" class="modal_confirmacao">
+        <div class="modal-content-confirmacao">
+            <div class="popup">
+                <h3 id="texto-confirmacao">Deseja confirmar a exclusão do produto?</h3>
+                <input type="submit" value="SIM" id="botao-sim">
+                <input type="button" value="NÃO" id="botao-nao" onclick="closeModalConfirmacao()">
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div class="rodape">
+            © 2021 - Sales Control. Todos os Direitos Reservados<br>
+            <a href="https://github.com/matheusduarte96">Github - Matheus Duarte</a>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+        <script src="cadastro.js" defer></script>
+        <link rel="stylesheet" href="index.css">
+        <title>Sales Control - Cadastro</title>
+</head>
+<body>
+    <nav class="menu">
+        <ul>
+            <li><a href="http://localhost:5500/public/cadastrar.html">Cadastrar Produtos</a></li>
+            <li><a href="http://localhost:5500/public/lista_produtos.html">Lista de Produtos</a></li>
+            <li><a href="#">Vendas de Produtos</a>
+                <ul>
+                    <li><a href="http://localhost:5500/public/vendas.html">Realizar Vendas</a></li>
+                    <li><a href="http://localhost:5500/public/listavendas.html">Listar Vendas</a></li>
+                </ul>
+            </li>
+        </ul> 
+    </nav>
+
+    <h2 id="titulo-cadastrar">Cadastrar Produtos</h2>
+    <form id="form-cadastrar">
+        <div><label for="codigo" class="requerido">Codigo:</label></div>
+        <br>
+        <div><input type="number" required="requerido" placeholder="Digite o codigo" class="caixa" id="codigo"></div> 
+        <br>       
+        <div><label for="produto" class="requerido">Produto:</label></div>
+        <br>
+        <div><input type="text" required="requerido" placeholder="Nome do Produto" size="60" class="caixa" id="produto"></div> 
+        <br>   
+        <div><label for="preco" class="requerido">Preço:</label></div>  
+        <br>  
+        <div><input type="text" required="requerido" placeholder="Preço Unitário" class="caixa" id="preco" onkeyup="formatarMoeda()"></div> 
+        <br>   
+        <div><label for="quantidade" class="requerido">Quantidade:</label></div>
+        <br>    
+        <div><input type="number" required="requerido" placeholder="Unidades" class="caixa" id="quantidade"></div>    
+        <br>
+        <div><label for="mensagem">Detalhes do Produto:</label></div>
+        <br>
+        <div><textarea name="mensagem" placeholder="Detalhes" cols="62" rows="4" id="mensagem" ></textarea></div>
+        <br>
+        <input type="submit" value="Cadastrar" id="bota-cadastrar">    
+        <a href="http://localhost:5500/public/lista_produtos.html"><input type="submit" value="Voltar" id="bota-voltar"></a>        
+    </form>
+    <footer>
+        <div class="rodape">
+            © 2021 - Sales Control. Todos os Direitos Reservados<br>
+            <a href="https://github.com/matheusduarte96">Github - Matheus Duarte</a>
+        </div>
+    </footer>
+</body>
+</html>

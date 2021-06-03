@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="vendas.js" defer></script>
+    <link rel="stylesheet" href="index.css">
+    <title>Sales Control - Vendas</title>
+</head>
+<body>
+    <nav class="menu">
+        <ul>
+            <li><a href="http://localhost:5500/public/cadastrar.html">Cadastrar Produtos</a></li>
+            <li><a href="http://localhost:5500/public/lista_produtos.html">Lista de Produtos</a></li>
+            <li><a href="#">Vendas de Produtos</a>
+                <ul>
+                    <li><a href="http://localhost:5500/public/vendas.html">Realizar Vendas</a></li>
+                    <li><a href="http://localhost:5500/public/listavendas.html">Listar Vendas</a></li>
+                </ul>
+            </li>
+        </ul> 
+    </nav>
+    <br>
+    <h3 id="titulo-vendas">Vendas de Produtos</h3>
+    <form id="form-vendas">
+        <br>       
+        <div><label for="codigo">Codigo:</label></div>
+        <br>
+        <div><input type="number" placeholder="Codigo" id="codigo" class="vendas"></div> 
+        <br> 
+        <div><label for="produto">Produto:</label></div>  
+        <br>          
+        <div><input type="text" placeholder="Produto" id="produto" size="60"class="vendas"></div> 
+        <br>
+        <div><label for="cliente">Cliente:</label></div>  
+        <br>  
+        <div><input type="text" placeholder="Cliente" id="cliente" size="60"class="vendas"></div> 
+        <br>   
+        <div><label for="preco">Preço:</label></div>
+        <br>    
+        <div><input type="text" placeholder="Preço" id="preco" class="vendas" onkeyup="formatarMoeda()"></div>    
+        <br>
+        <div><label for="quantidade">Quantidade:</label></div>
+        <br>    
+        <div><input type="number" placeholder="Quantidade" id="quantidade" class="vendas"></div> 
+        <br>
+        <div><label for="preco">Tipo de Pagamento:</label></div>
+        <br>    
+        <select name="tipo-pagamento" id="tipo-pagamento" class="vendas">
+            <option value="selecione">Selecionar</option>
+            <option value="À vista">À vista</option>
+            <option value="À prazo">À prazo</option>
+        </select>
+        <br>
+        <br>
+        <input type="submit" value="Cadastrar" id="botao-vendas">    
+        <a href="http://localhost:5500/public/cadastrar.html"><input type="button" value="Voltar" id="bota-voltar"></a> 
+    </form>
+    <footer>
+        <div class="rodape">
+            © 2021 - Sales Control. Todos os Direitos Reservados<br>
+            <a href="https://github.com/matheusduarte96">Github - Matheus Duarte</a>
+        </div>
+    </footer>
+</body>
+</html>
